@@ -1,0 +1,136 @@
+[
+  {
+    "id": "py-colon-trap",
+    "title": "The Colon Trap",
+    "language": "Python",
+    "difficulty": "Easy",
+    "bugType": "Syntax",
+    "obstacle": "Syntax Spider",
+    "summary": "A greeting spell fails because the function declaration is incomplete.",
+    "themeStory": "The Syntax Spider tangled the greeting spell. Restore the function so the town gates open.",
+    "starterCode": "def greet(name)\n    print(f\"Hello, {name}!\")\n\ngreet(\"Ada\")\n",
+    "objective": "Fix the syntax so the function runs and prints the greeting.",
+    "conceptExplanation": "Python function declarations must end with a colon, and indentation defines the function body.",
+    "successMessage": "The web of syntax snaps and the gate swings open.",
+    "recap": "You repaired a Python syntax error by adding the missing colon after the function definition.",
+    "validator": {
+      "mode": "all_of",
+      "rules": [
+        { "type": "contains", "value": "def greet(name):" },
+        { "type": "contains", "value": "print(f\"Hello, {name}!\")" },
+        { "type": "contains", "value": "greet(\"Ada\")" }
+      ]
+    }
+  },
+  {
+    "id": "py-zero-warden",
+    "title": "The Zero Warden",
+    "language": "Python",
+    "difficulty": "Medium",
+    "bugType": "Runtime",
+    "obstacle": "Runtime Sentinel",
+    "summary": "The average calculator crashes when there are no scores.",
+    "themeStory": "The Runtime Sentinel punishes reckless division. Add a safe path when no scores exist.",
+    "starterCode": "def average_score(total, count):\n    return total / count\n\nprint(average_score(0, 0))\n",
+    "objective": "Prevent a crash when count is zero.",
+    "conceptExplanation": "Runtime errors happen while the program is running. Dividing by zero raises an exception in Python.",
+    "successMessage": "The sentinel lowers its shield as the calculation stabilizes.",
+    "recap": "You handled a runtime error by checking input before division.",
+    "validator": {
+      "mode": "all_of",
+      "rules": [
+        { "type": "contains_any", "values": ["if count == 0", "if(count == 0)"] },
+        { "type": "contains_any", "values": ["return 0", "return 0.0", "return \"No scores yet\""] },
+        { "type": "contains", "value": "return total / count" }
+      ]
+    }
+  },
+  {
+    "id": "py-loop-labyrinth",
+    "title": "The Loop Labyrinth",
+    "language": "Python",
+    "difficulty": "Medium",
+    "bugType": "Logic",
+    "obstacle": "Logic Gatekeeper",
+    "summary": "The loop forgets to count the final number in the range.",
+    "themeStory": "The Logic Gatekeeper loves off-by-one mistakes. Count every step to leave the maze.",
+    "starterCode": "def total_steps():\n    total = 0\n    for step in range(1, 5):\n        total += step\n    return total\n\nprint(total_steps())\n",
+    "objective": "Make the function return the total from 1 through 5.",
+    "conceptExplanation": "Logic bugs produce the wrong result even though the code runs. Python ranges exclude the stop value.",
+    "successMessage": "The maze walls shift aside when the final step is counted.",
+    "recap": "You fixed a logic bug by correcting the loop boundary.",
+    "validator": {
+      "mode": "any_of",
+      "rules": [
+        { "type": "contains", "value": "range(1, 6)" },
+        { "type": "contains", "value": "range(1,5 + 1)" }
+      ]
+    }
+  },
+  {
+    "id": "java-semicolon-shrine",
+    "title": "The Semicolon Shrine",
+    "language": "Java",
+    "difficulty": "Easy",
+    "bugType": "Syntax",
+    "obstacle": "Semicolon Spirit",
+    "summary": "A message ritual fails because one statement never ends.",
+    "themeStory": "The Semicolon Spirit blocks the shrine until every Java statement is properly sealed.",
+    "starterCode": "public class Main {\n    public static void main(String[] args) {\n        String message = \"Welcome, Debugger!\"\n        System.out.println(message);\n    }\n}\n",
+    "objective": "Fix the syntax so the Java program is valid.",
+    "conceptExplanation": "Java statements usually end with semicolons. Missing one causes a syntax error during compilation.",
+    "successMessage": "The shrine glows as the final semicolon clicks into place.",
+    "recap": "You repaired a Java syntax error by ending the assignment statement properly.",
+    "validator": {
+      "mode": "all_of",
+      "rules": [
+        { "type": "contains", "value": "String message = \"Welcome, Debugger!\";" },
+        { "type": "contains", "value": "System.out.println(message);" }
+      ]
+    }
+  },
+  {
+    "id": "java-null-phantom",
+    "title": "The Null Phantom",
+    "language": "Java",
+    "difficulty": "Medium",
+    "bugType": "Runtime",
+    "obstacle": "Null Phantom",
+    "summary": "The phantom appears when the code tries to read a missing name.",
+    "themeStory": "The Null Phantom haunts careless code. Protect the method before touching a missing value.",
+    "starterCode": "public class Main {\n    public static void printNameLength(String name) {\n        System.out.println(name.length());\n    }\n\n    public static void main(String[] args) {\n        printNameLength(null);\n    }\n}\n",
+    "objective": "Prevent a null-related crash when the name is missing.",
+    "conceptExplanation": "A NullPointerException happens when code uses an object reference that is null.",
+    "successMessage": "The phantom fades as the method checks for null before reading the name.",
+    "recap": "You handled a Java runtime bug by guarding against null values.",
+    "validator": {
+      "mode": "all_of",
+      "rules": [
+        { "type": "contains_any", "values": ["if (name == null)", "if(name == null)"] },
+        { "type": "contains", "value": "name.length()" }
+      ]
+    }
+  },
+  {
+    "id": "java-boss-gate",
+    "title": "The Boss Gate",
+    "language": "Java",
+    "difficulty": "Hard",
+    "bugType": "Logic",
+    "obstacle": "Boss Bug",
+    "summary": "The final gate opens only if the average is calculated correctly for all students.",
+    "themeStory": "The Boss Bug twists the average formula. Repair the logic and claim the final badge.",
+    "starterCode": "public class Main {\n    public static double average(int total, int count) {\n        return count / total;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(average(20, 4));\n    }\n}\n",
+    "objective": "Return the correct average value from total and count.",
+    "conceptExplanation": "Logic bugs can hide in valid code. Here, the formula is reversed.",
+    "successMessage": "The final gate unlocks as the formula aligns with reality.",
+    "recap": "You fixed a logic bug by correcting the average formula.",
+    "validator": {
+      "mode": "all_of",
+      "rules": [
+        { "type": "contains_any", "values": ["return (double) total / count;", "return total / (double) count;", "return total / count;"] },
+        { "type": "not_contains", "value": "return count / total;" }
+      ]
+    }
+  }
+]
