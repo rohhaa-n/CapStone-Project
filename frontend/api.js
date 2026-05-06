@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || (import.meta.env.DEV ? "http://127.0.0.1:5000/api" : "/backend/api")
 
 async function parseResponse(response) {
   const payload = await response.json()
