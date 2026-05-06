@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #020617;
+  color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.panel {
+  @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-ember px-5 py-3 font-semibold text-white transition hover:bg-orange-500;
+}
+
+.button-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-sky-300/30 bg-sky-300/10 px-5 py-3 font-semibold text-sky-100 transition hover:bg-sky-300/20;
+}
+
