@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+.env
+*.pyc
+
